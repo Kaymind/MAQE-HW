@@ -19,13 +19,11 @@ class Home extends Component {
             this.setState({loading:true})
             console.log(this.state.loading)
             //get posts
-            const resPost = await axios.get('post.json')
-            // const resPost = await axios.get('http://maqe.github.io/json/posts.json')
+            const resPost = await axios.get('http://maqe.github.io/json/posts.json')
             this.setState({posts: resPost.data})
             console.log(resPost.data)
             //get authors
-            const restAuth = await axios.get('author.json')
-            // const restAuth = await axios.get('http://maqe.github.io/json/authors.json')
+            const restAuth = await axios.get('http://maqe.github.io/json/authors.json')
             this.setState({authors: restAuth.data})
             console.log(restAuth.data)
             //load completed
@@ -40,6 +38,21 @@ class Home extends Component {
         })
     }
 
+    prevPage = (pageNumber) => {
+        if(pageNumber - 1 > 0) {
+            this.setState({
+                currentPage: pageNumber - 1
+            })
+        }
+    }
+
+    nextPage = (pageNumber, numOfPages) => {
+        if(pageNumber + 1 <= numOfPages)
+        this.setState({
+            currentPage: pageNumber + 1
+        })
+    }
+
     render(){
         const { posts, authors, postPerpage, currentPage, loading } = this.state;
         return(
@@ -50,7 +63,14 @@ class Home extends Component {
                     <h3>Posts</h3>
                     <PostList posts={posts} authors={authors} postPerpage={postPerpage} currentPage={currentPage} loading={loading}/>
                 </div>
-                <Pagination postPerpage={postPerpage} totalPost={posts.length} changedPage={this.changedPage} currentPage={currentPage}/>
+                <Pagination 
+                    postPerpage={postPerpage} 
+                    totalPost={posts.length} 
+                    changedPage={this.changedPage} 
+                    currentPage={currentPage}
+                    prevPage={this.prevPage}
+                    nextPage={this.nextPage}
+                />
             </div>
         )
     }

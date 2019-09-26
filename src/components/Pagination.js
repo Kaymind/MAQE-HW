@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Pagination = ({postPerpage, totalPost, changedPage, currentPage}) => {
+const Pagination = ({postPerpage, totalPost, changedPage, currentPage, nextPage, prevPage}) => {
 
     const pageNumbers = [];
     for(let i = 1; i <= Math.ceil(totalPost / postPerpage); i++){
@@ -12,7 +12,7 @@ const Pagination = ({postPerpage, totalPost, changedPage, currentPage}) => {
         <nav className="container my-5">
             <ul className="pagination justify-content-center">
                 <li className="page-item">
-                    <Link className="page-link text-dark border-0" to="/">Previous</Link>
+                    <Link className="page-link text-dark border-0" onClick={() => prevPage(currentPage)}>Previous</Link>
                 </li>
                     {pageNumbers.map((number) => {
                         return (
@@ -24,7 +24,7 @@ const Pagination = ({postPerpage, totalPost, changedPage, currentPage}) => {
                         )
                     })}
                 <li className="page-item">
-                        <Link className="page-link text-dark border-0" to="/">Next</Link>
+                        <Link className="page-link text-dark border-0" onClick={() => nextPage(currentPage,pageNumbers.length)}>Next</Link>
                 </li>
             </ul>
         </nav>

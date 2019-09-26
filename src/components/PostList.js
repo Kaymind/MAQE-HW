@@ -67,7 +67,7 @@ class PostList extends Component{
             })
          } else {
             postList.push(
-                <div className="post" id="no-post">
+                <div className="post" key="no-post">
                     No post yet.
                 </div>
             )
@@ -81,5 +81,5 @@ class PostList extends Component{
     }   
 }
 
-export default PostList
+export default PostList;
 
