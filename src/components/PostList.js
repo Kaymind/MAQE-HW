@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { distanceInWordsStrict } from 'date-fns';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -41,7 +40,7 @@ class PostList extends Component{
                 postList.push(
                     <div className="post row p-3 my-3 border shadow-sm" style={{minHeight: "300px"}} key={post.id}>
                         <div className="pic col-2 p-0">
-                            <img className="pic-post border-0 w-100" src={post.image_url} alt="post image"/>
+                            <img className="pic-post w-100" src={post.image_url} alt="pic-post"/>
                         </div>
                         <div className="content col-8">
                             <div className="title">
