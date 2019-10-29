@@ -13,19 +13,19 @@ const Pagination = ({postPerpage, totalPost, changedPage, currentPage, nextPage,
         <nav className="container my-5">
             <ul className="pagination justify-content-center">
                 <li className="page-item">
-                    <Link className="page-link text-dark border-0" to="" onClick={() => prevPage(currentPage)}>Previous</Link>
+                    <Link className="page-link text-dark border-0 font-weight-bold" to="" onClick={() => prevPage(currentPage)}>Previous</Link>
                 </li>
                     {pageNumbers.map((number) => {
                         return (
                             <li key={number} className={(currentPage === number ? 'active ' : '') + "page-item"}>
-                                <Link to="/" className="page-link text-dark border-0" onClick={() => {changedPage(number)}}>
+                                <Link to="/" className="page-link text-dark border-0 font-weight-bold" onClick={() => {changedPage(number)}}>
                                     {number}
                                 </Link>
                             </li>
                         )
                     })}
                 <li className="page-item">
-                        <Link className="page-link text-dark border-0" to="" onClick={() => nextPage(currentPage,pageNumbers.length)}>Next</Link>
+                        <Link className="page-link text-dark border-0 font-weight-bold" to="" onClick={() => nextPage(currentPage,pageNumbers.length)}>Next</Link>
                 </li>
             </ul>
         </nav>
