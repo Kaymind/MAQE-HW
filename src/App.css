@@ -1,6 +1,15 @@
 .container {
-  /* width: 1200px; */
-  /* min-width: 600px; */
+  min-width: 1200px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .post:nth-of-type(even) {
@@ -42,4 +51,21 @@ li.active a{
   outline: none;
   background-color: crimson !important;
   color: #fff !important;
+}
+
+.post {
+  min-height: 250px;
+}
+
+.post-duration {
+  opacity: 0.7;
+}
+
+.post-body {
+  font-size: 0.9rem;
+}
+
+.post-title {
+  font-size: 1.3rem;
+  font-weight: bold;
 }

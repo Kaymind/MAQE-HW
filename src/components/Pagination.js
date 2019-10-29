@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Pagination = ({postPerpage, totalPost, changedPage, currentPage, nextPage, prevPage}) => {
 
@@ -29,6 +30,15 @@ const Pagination = ({postPerpage, totalPost, changedPage, currentPage, nextPage,
             </ul>
         </nav>
     );
+}
+
+Pagination.propTypes = {
+    postPerpage: PropTypes.number.isRequired,
+    totalPost: PropTypes.number.isRequired,
+    changedPage: PropTypes.func.isRequired,
+    currentPage: PropTypes.number.isRequired,
+    nextPage: PropTypes.func.isRequired,
+    prevPage: PropTypes.func.isRequired
 }
 
 export default Pagination;

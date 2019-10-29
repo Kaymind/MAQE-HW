@@ -56,9 +56,9 @@ class Home extends Component {
         return(
             <div className='home-app my-3'>
                 <div className="container">
-                    <h1>MAQE Forums</h1>
-                    <h2>Subtitle</h2>
-                    <h3>Posts</h3>
+                    <h1 className="my-4 font-weight-bold">MAQE Forums</h1>
+                    <h2 className="my-4 font-weight-bold">Subtitle</h2>
+                    <h3 className="my-4 font-weight-bold">Posts</h3>
                     <PostList posts={posts} authors={authors} postPerpage={postPerpage} currentPage={currentPage} loading={loading}/>
                 </div>
                 <Pagination 
@@ -74,4 +74,4 @@ class Home extends Component {
     }
 }
 
-export default Home
+export default Home;
